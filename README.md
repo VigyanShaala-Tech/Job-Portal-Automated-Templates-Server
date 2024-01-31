@@ -29,9 +29,9 @@ This README would normally document whatever steps are necessary to get your app
 * Get the bearer token from the developer console in the UI when logging in
 
 
-### Important Links ###
 
-* Swagger link : https://api.vigyanshaala.org/swagger-ui/index.html
+
+
 
 
 
