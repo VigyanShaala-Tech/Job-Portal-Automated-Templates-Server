@@ -32,7 +32,7 @@
 - Open PostgreSQL client (e.g., `psql` or `pgAdmin`).
 - Create the database:
   ```sql
-  CREATE DATABASE vigyanshaala;
+  CREATE DATABASE database_name;
   ```
 - Run the `create.sql` file from your project:
   ```sql
