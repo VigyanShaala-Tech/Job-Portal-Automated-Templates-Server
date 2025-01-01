@@ -1,6 +1,91 @@
-# README #
+# Local Setup: UI and Backend Setup for VigyanShaala Project
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## Part A: Server Setup
+
+### 1. Prerequisites Installation
+
+#### Java Development Kit (JDK) 17
+- Download JDK 17 from [Oracle JDK](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html) or [OpenJDK](https://openjdk.org/).
+- Install JDK and note the installation path.
+
+#### Apache Maven
+- Download Maven from [Apache Maven Download](https://maven.apache.org/download.cgi).
+- Extract and note the `bin` folder path.
+
+#### IntelliJ IDEA
+- Download and install IntelliJ IDEA from [JetBrains](https://www.jetbrains.com/idea/).
+
+#### PostgreSQL
+- Download and install PostgreSQL from [PostgreSQL Downloads](https://www.postgresql.org/download/).
+
+### 2. Configure Environment Variables
+
+#### Steps:
+- Add the `bin` paths for JDK and Maven to your system's environment variables:
+
+  - **Windows:**
+    - Open "System Properties" > "Environment Variables."
+    - Under "System Variables," add new paths for JDK and Maven `bin`.
+- Restart the terminal to apply changes.
+
+### 3. Create Database in PostgreSQL
+- Open PostgreSQL client (e.g., `psql` or `pgAdmin`).
+- Create the database:
+  ```sql
+  CREATE DATABASE vigyanshaala;
+  ```
+- Run the `create.sql` file from your project:
+  ```sql
+  \i path/to/create.sql;
+  ```
+
+### 4. Update `application.yml`
+- Open the `application.yml` file in the backend project.
+- Update the PostgreSQL credentials:
+  ```yaml
+  spring:
+    datasource:
+      url: jdbc:postgresql://localhost:port/database_name
+      username: your_username
+      password: your_password
+  ```
+
+---
+
+## Part C: Running the Code
+
+### 1. Start the Backend
+- Open IntelliJ IDEA and load the backend project.
+- Open the terminal in IntelliJ and run:
+  ```bash
+  mvn clean install
+  ```
+- Navigate to the target directory:
+  ```bash
+  cd target
+  ```
+- Start the backend application:
+  ```bash
+  java -jar Vigyanshaala-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
+  ```
+
+---
+
+## Part D: Post-Setup Tasks
+
+### 1. Add `user_role` to PostgreSQL
+- Open the PostgreSQL client.
+- Insert `user_role` entries into the database:
+  ```sql
+  INSERT INTO user_role (email_id, cohort, completion_status, name, role)
+  VALUES ('user@gmail.com', 'incubator', 'yes', 'user_name', 'student');
+  ```
+
+-------------------------------------------------------------------------------------------------------------------
+
+# Old README #
+
+The Below README would normally document whatever steps are necessary to get your application up and running.
 
 ### What is this repository for? ###
 
